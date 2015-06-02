@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # themes.py - given a lexicon, compute a quotient denoting the significance of the lexicon's use
 

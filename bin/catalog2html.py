@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # catalog2html.py - given the name of a corpus, output a human-readable version of the corpus's catalog
 
@@ -6,6 +6,7 @@
 # May 24, 2015 - first cut
 # May 25, 2015 - tweaking before going to Detroit to pick up GMCC
 # June 1, 2015 - moved HTML off to a template
+# June 2, 2015 - added sanity checking
 
 
 # configure
@@ -16,6 +17,11 @@ TEMPLATE = './etc/template-catalog.txt'
 # require
 import sys
 import re
+
+# sanity check
+if ( len( sys.argv ) != 2 ) | ( sys.stdin.isatty() ) :
+	print "Usage: cat <name>/catalog.db |", sys.argv[ 0 ], '<name>'
+	quit()
 
 # get input
 name = sys.argv[ 1 ]

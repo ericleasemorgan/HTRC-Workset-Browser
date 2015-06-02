@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # make-index.py - read HathiTrust Research Center JSON files and output word frequencies as well as a "book"
 
@@ -7,6 +7,7 @@
 # May 20, 2015 - tweaked regular expressions
 # May 22, 2015 - tweaked regular expressions (again), and added plain text book output
 # May 28, 2015 - added local stop word support; removed the need for NLTK
+# June 2, 2015 - added sanity checking
 
 
 # configure
@@ -19,8 +20,8 @@ import sys
 import ujson
 
 # sanity check
-if len( sys.argv ) != 2 :
-	print "Usage:", sys.argv[ 0 ], '<-b|-d>'
+if ( len( sys.argv ) != 2 ) | ( sys.stdin.isatty() ) :
+	print "Usage: cat <json> |", sys.argv[ 0 ], '<-b|-d>'
 	quit()
 
 # get input; sanity check
@@ -30,7 +31,7 @@ flag = sys.argv[ 1 ]
 if   flag == '-b' : build_book = 1
 elif flag == '-d' : build_book = 0
 else :
-	print "Usage:", sys.argv[ 0 ], '<-b|-d>'
+	print "Usage: cat <json> |", sys.argv[ 0 ], '<-b|-d>'
 	quit()
 
 # initialize 

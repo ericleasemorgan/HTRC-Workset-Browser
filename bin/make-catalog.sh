@@ -3,10 +3,19 @@
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 23, 2015 - first cut
 # May 30, 2015 - added human-readable version to output
+# June 2, 2015 - added sanity checking
 
 
 # get input
 NAME=$1
+
+# sanity check
+if [ -z $NAME ]; then
+
+    echo "Usage: $0 <name>"
+    exit 1
+    
+fi
 
 # initialize the database with the content from the json files
 ./bin/make-catalog.py $NAME/json/ | sort > $NAME/catalog.db

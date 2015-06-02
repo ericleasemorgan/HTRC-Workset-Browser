@@ -3,11 +3,20 @@
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 21, 2015 - first investigations
 # May 31, 2015 - added charting (oops!) as well as pretty about page; fifteen years ago today, Dad died
+# June 2, 2015 - added sanity checking
 
 
-# configure
+# get input
 NAME=$1
 RSYNCSCRIPT=$2
+
+# sanity check
+if [ -z $NAME ] || [ -z $RSYNCSCRIPT ]; then
+
+    echo "Usage: $0 <name> <rsync>"
+    exit 1
+    
+fi
 
 
 # stage #1 - set up the directory structure for the corpus

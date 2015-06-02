@@ -1,9 +1,10 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # about2html.py - transform an about.db file into an HTML stream
 
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 31, 2015 - first investigations; Dad died about fifteen years ago today
+# June 2, 2015 - added sanity checking
 
 
 # configure
@@ -17,6 +18,12 @@ TEXT     = './text/'
 # require
 import sys
 import re
+
+# sanity check
+if len( sys.argv ) != 2 :
+	print "Usage: " + sys.argv[ 0 ] + ' <name>'
+	quit()
+
 
 # get input
 corpus = sys.argv[ 1 ]

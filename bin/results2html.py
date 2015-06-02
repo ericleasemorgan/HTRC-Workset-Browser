@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # results2html.py - given standard input, output an HTML table of search results
 
@@ -6,6 +6,7 @@
 # May 28, 2015 - first investigations
 # May 30, 2015 - tweaked display, but how do I turn (toggle) off specific columns by default
 # June 1, 2015 - moved the html template off to a file
+# June 2, 2015 - added (some) sanity checking
 
 
 # configure
@@ -15,6 +16,11 @@ TEMPLATE = './etc/template-search-results.txt'
 # require
 import sys
 import re
+
+# sanity check
+if ( len( sys.argv ) != 2 ) | ( sys.stdin.isatty() ) :
+	print "Usage: ./bin/search.py <query> <name> | " + sys.argv[ 0 ] + ' <name>'
+	quit()
 
 # get input
 name = sys.argv[ 1 ]

@@ -1,14 +1,20 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # results2text.py - format search results as a stream of plain text
 
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 27, 2015 - first cut
+# June 2, 2015 - added sanity checking
 
 
 # require
 import sys
 
+# sanity check
+if sys.stdin.isatty() :
+	print "Usage: ./bin/search.py <query> <name> | " + sys.argv[ 0 ] 
+	quit()
+	
 # initialize
 pointer = 0
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # search.py - given a word and an index, return a list of relevancy ranked identifiers whose document contains the word
 

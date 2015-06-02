@@ -2,10 +2,19 @@
 
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 31, 2015 - first investigations; based on previous work
+# June 2, 2015 - added sanity check
 
 
-# configure
+# get input
 CORPUSNAME=$1
+
+# sanity check
+if [ -z $CORPUSNAME ]; then
+
+    echo "Usage: $0 <name>"
+    exit 1
+    
+fi
 
 # size of corpus
 CORPUSSIZE=$( ls -1 $CORPUSNAME/json/*.json | wc -l )

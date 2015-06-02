@@ -1,10 +1,9 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # dictionary.py - create a frequency file containing all the words in a corpus -- a dictionary
 
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 19, 2015; first cut
-
 
 # require
 import sys
@@ -13,7 +12,7 @@ import glob
 
 # sanity check
 if len( sys.argv ) != 2 :
-	print "Usage:", sys.argv[ 0 ], '<directory>'
+	print "Usage:", sys.argv[ 0 ], '<name>'
 	quit()
 
 # initialize

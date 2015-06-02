@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # make-catalog.py - create a "catalog" from a set of HathiTrust json files
 
@@ -18,7 +18,7 @@ import os
 
 # sanity check
 if len( sys.argv ) != 2 :
-	print "Usage:", sys.argv[ 0 ], '<directory>'
+	print "Usage:", sys.argv[ 0 ], '<name>'
 	quit()
 
 # get input
