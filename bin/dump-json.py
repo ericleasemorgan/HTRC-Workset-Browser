@@ -8,7 +8,7 @@
 
 
 # require
-import ujson
+import json
 import sys
 from pprint import pprint
 
@@ -18,4 +18,4 @@ if sys.stdin.isatty() :
 	quit()
 
 # import from STDIN
-pprint( ujson.load( sys.stdin ) )
+pprint( json.load( sys.stdin ) )
