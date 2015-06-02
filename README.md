@@ -31,10 +31,25 @@ Quick start
   If all goes well, the Browser will create a new directory named thoreau,
   rsync a bunch o' JSON files from the HathiTrust to your computer, index
   the JSON files, do some textual analysis against the corpus, create a
-  simple database ("catalog"), and create a few more reports. You can then
-  peruse the files in the newly created thoreau directory. If this worked,
-  then repeat the process for the other rsync files found in the etc
-  directory.
+  simple database ("catalog"), and create a few more reports.
+  
+  If you have R installed, as well as some of R's friends, then you can
+  optionally run the following command to generate some charts:
+  
+    ./bin/make-graphs.sh thoreau
+  
+  You can then peruse the files in the newly created thoreau directory. Of
+  special interest is the file named about.html because it summarizes the
+  collection. If you created the charts, then there ought to be no broken
+  links in the file. If the file is being served via a Web server, then
+  the search interface will work. If not, then you can still search the
+  collection with the following command:
+
+    ./bin/search.sh love thoreau | less
+    
+  If you got this far, then repeat the process for the other rsync files
+  found in the etc directory.
+  
   
 Requirements
 
