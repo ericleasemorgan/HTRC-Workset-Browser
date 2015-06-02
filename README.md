@@ -16,7 +16,25 @@ README - An introductory description to this, the HathiTrust Research Center Wor
   The current home page of the Browser is http://bit.ly/workset-browser
   
   An example of its current output is: http://bit.ly/browser-thoreau
-  
+
+
+Quick start
+
+    1. Download the software putting the bin and etc directories in the same directory
+    
+    2. Change to the directory where the bin and etc directories have been saved.
+    
+    3. Build a collection by issuing the following command:
+    
+         ./bin/build-corpus.sh thoreau etc/rsync-thoreau.sh
+
+  If all goes well, the Browser will create a new directory named thoreau,
+  rsync a bunch o' JSON files from the HathiTrust to your computer, index
+  the JSON files, do some textual analysis against the corpus, create a
+  simple database ("catalog"), and create a few more reports. You can then
+  peruse the files in the newly created thoreau directory. If this worked,
+  then repeat the process for the other rsync files found in the etc
+  directory.
   
 Requirements
 
@@ -95,4 +113,4 @@ Eric Lease Morgan, Librarian
 University of Notre Dame
 emorgan@nd.edu
 
-May 26, 2015
+June 2, 2015
