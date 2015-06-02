@@ -3,7 +3,7 @@
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 23, 2015 - first cut
 # May 30, 2015 - added human-readable version to output
-# June 2, 2015 - added sanity checking
+# June 2, 2015 - added sanity checking; removed json configuration
 
 
 # get input
@@ -18,7 +18,7 @@ if [ -z $NAME ]; then
 fi
 
 # initialize the database with the content from the json files
-./bin/make-catalog.py $NAME/json/ | sort > $NAME/catalog.db
+./bin/make-catalog.py $NAME/ | sort > $NAME/catalog.db
 
 # append: sizes, colors, names, ideas
 ./bin/calculate-size.sh   $NAME                      | sort | cut -f2 | paste $NAME/catalog.db - > $NAME/catalog.tmp; mv $NAME/catalog.tmp $NAME/catalog.db
@@ -27,7 +27,7 @@ fi
 ./bin/calculate-themes.sh $NAME etc/theme-ideas.txt  | sort | cut -f2 | paste $NAME/catalog.db - > $NAME/catalog.tmp; mv $NAME/catalog.tmp $NAME/catalog.db
 
 # add the human-readable header
-echo -e 'id\ttitle\tpublication date\tpage count\tHathiTrust URL\tlanguage\tMARC URL\tWorldCat URL\tsize in words\tcolor coefficient\tname coefficient\tideas coefficient' | cat - $NAME/catalog.db > $NAME/catalog.tmp; mv $NAME/catalog.tmp $NAME/catalog.db
+printf "id\ttitle\tpublication date\tpage count\tHathiTrust URL\tlanguage\tMARC URL\tWorldCat URL\tsize in words\tcolor coefficient\tname coefficient\tideas coefficient\n" | cat - $NAME/catalog.db > $NAME/catalog.tmp; mv $NAME/catalog.tmp $NAME/catalog.db
 
 # make the human-readable version
 ./bin/catalog2html.py $NAME > $NAME/catalog.html

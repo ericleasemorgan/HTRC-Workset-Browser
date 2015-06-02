@@ -19,8 +19,8 @@ import sys
 import re
 
 # sanity check
-if ( len( sys.argv ) != 2 ) | ( sys.stdin.isatty() ) :
-	print "Usage: cat <name>/catalog.db |", sys.argv[ 0 ], '<name>'
+if len( sys.argv ) != 2 :
+	print "Usage:", sys.argv[ 0 ], '<name>'
 	quit()
 
 # get input
