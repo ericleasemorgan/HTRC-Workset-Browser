@@ -12,7 +12,7 @@ WORLDCAT = 'http://worldcat.org/oclc/'
 
 # require
 import glob
-import ujson
+import json
 import sys
 import os
 
@@ -28,7 +28,7 @@ directory = sys.argv[ 1 ]
 for filename in glob.glob( directory + '*.json' ):
 
 	# open and read the file
-	with open( filename ) as data: metadata = ujson.load( data )
+	with open( filename ) as data: metadata = json.load( data )
 		
 	# parse
 	id           = metadata[ 'id' ]

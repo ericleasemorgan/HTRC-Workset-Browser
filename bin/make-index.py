@@ -17,7 +17,7 @@ STOPWORDS = './etc/stopwords-en.txt'
 import operator
 import re
 import sys
-import ujson
+import json
 
 # sanity check
 if ( len( sys.argv ) != 2 ) | ( sys.stdin.isatty() ) :
@@ -35,7 +35,7 @@ else :
 	quit()
 
 # initialize 
-json      = ujson.load( sys.stdin )
+json      = json.load( sys.stdin )
 words     = {}
 book      = ( json[ 'metadata' ][ 'title' ] ).encode( 'utf-8' ) + '\t' + ( json[ 'metadata' ][ 'handleUrl' ] ).encode( 'utf-8' ) + '\n'
 

@@ -3,7 +3,7 @@
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 21, 2015 - first investigations
 # May 31, 2015 - added charting (oops!) as well as pretty about page; fifteen years ago today, Dad died
-# June 2, 2015 - added sanity checking
+# June 2, 2015 - added sanity checking; removed need for rename command
 
 
 # get input
@@ -35,7 +35,7 @@ RSYNCSCRIPT=$( basename $RSYNCSCRIPT )
 # get rid of "advanced" files, uncompress everything, and rename the balance
 rm *.advanced.*
 bunzip2 *.bz2
-rename .basic. . *.json
+for f in *.basic.json; do mv $f ${f//basic\.json}json ; done
 
 
 # stage #2 - create the index
