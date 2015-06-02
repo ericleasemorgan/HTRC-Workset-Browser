@@ -2,7 +2,7 @@
 
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 31, 2015 - first investigations; based on previous work
-# June 2, 2015 - added sanity check
+# June 2, 2015 - added sanity check; removed some Linux-isms
 
 
 # get input
@@ -49,7 +49,7 @@ PAGESTOTAL=$(   echo "$CATALOG" | cut -f4 | paste -sd+ -  | bc )
 WORDSSHORTEST=$(echo "$CATALOG" | sort -t $'\t' -k9 -n    | cut -f9 | head -1 )
 WORDSLONGEST=$( echo "$CATALOG" | sort -t $'\t' -k9 -n -r | cut -f9 | head -1 )
 WORDSTOTAL=$(   echo "$CATALOG" | cut -f9 | paste -sd+ - | bc )
-WORDSUNIQUE=$(    wc -l $CORPUSNAME/unique.db | cut -f1 -d' ')
+WORDSUNIQUE=$(    wc -l < $CORPUSNAME/unique.db | tr -d ' ' )
 
 # most frequent words
 FREQUENTWORDS=$( cat $CORPUSNAME/dictionary.db        | head -25 | awk '{print $1" "$2}' | tr '\n' '|' )
@@ -70,31 +70,31 @@ COLORSMOST=$(   echo "$CATALOG" | sort -t $'\t' -k10 -g -r | head -1 | cut -f1 )
 COLORSLEAST=$(  echo "$CATALOG" | sort -t $'\t' -k10 -g    | head -1 | cut -f1 )
 
 # output
-echo -e "CORPUSNAME\t$CORPUSNAME"
-echo -e "CORPUSSIZE\t$CORPUSSIZE"
-echo -e "DATEEARLIEST\t$DATEEARLIEST"
-echo -e "DATELATEST\t$DATELATEST"
-echo -e "PAGESSHORTEST\t$PAGESSHORTEST"
-echo -e "PAGESLONGEST\t$PAGESLONGEST"
-echo -e "PAGESTOTAL\t$PAGESTOTAL"
-echo -e "WORDSSHORTEST\t$WORDSSHORTEST"
-echo -e "WORDSLONGEST\t$WORDSLONGEST"
-echo -e "WORDSTOTAL\t$WORDSTOTAL"
-echo -e "WORDSUNIQUE\t$WORDSUNIQUE"
-echo -e "FREQUENTWORDS\t$FREQUENTWORDS"
-echo -e "FREQUENTIDEAS\t$FREQUENTIDEAS"
-echo -e "FREQUENTNAMES\t$FREQUENTNAMES"
-echo -e "FREQUENTCOLORS\t$FREQUENTCOLORS"
-echo -e "WORKSHORTEST\t$WORKSHORTEST"
-echo -e "WORKLONGEST\t$WORKLONGEST"
-echo -e "WORKOLDEST\t$WORKOLDEST"
-echo -e "WORKNEWEST\t$WORKNEWEST"
-echo -e "IDEASMOST\t$IDEASMOST"
-echo -e "IDEASLEAST\t$IDEASLEAST"
-echo -e "NAMESMOST\t$NAMESMOST"
-echo -e "NAMESLEAST\t$NAMESLEAST"
-echo -e "COLORSMOST\t$COLORSMOST"
-echo -e "COLORSLEAST\t$COLORSLEAST"
+printf "CORPUSNAME\t$CORPUSNAME\n"
+printf "CORPUSSIZE\t$CORPUSSIZE\n"
+printf "DATEEARLIEST\t$DATEEARLIEST\n"
+printf "DATELATEST\t$DATELATEST\n"
+printf "PAGESSHORTEST\t$PAGESSHORTEST\n"
+printf "PAGESLONGEST\t$PAGESLONGEST\n"
+printf "PAGESTOTAL\t$PAGESTOTAL\n"
+printf "WORDSSHORTEST\t$WORDSSHORTEST\n"
+printf "WORDSLONGEST\t$WORDSLONGEST\n"
+printf "WORDSTOTAL\t$WORDSTOTAL\n"
+printf "WORDSUNIQUE\t$WORDSUNIQUE\n"
+printf "FREQUENTWORDS\t$FREQUENTWORDS\n"
+printf "FREQUENTIDEAS\t$FREQUENTIDEAS\n"
+printf "FREQUENTNAMES\t$FREQUENTNAMES\n"
+printf "FREQUENTCOLORS\t$FREQUENTCOLORS\n"
+printf "WORKSHORTEST\t$WORKSHORTEST\n"
+printf "WORKLONGEST\t$WORKLONGEST\n"
+printf "WORKOLDEST\t$WORKOLDEST\n"
+printf "WORKNEWEST\t$WORKNEWEST\n"
+printf "IDEASMOST\t$IDEASMOST\n"
+printf "IDEASLEAST\t$IDEASLEAST\n"
+printf "NAMESMOST\t$NAMESMOST\n"
+printf "NAMESLEAST\t$NAMESLEAST\n"
+printf "COLORSMOST\t$COLORSMOST\n"
+printf "COLORSLEAST\t$COLORSLEAST\n"
 
 # done
 exit
