@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # make-catalog.sh - given a name, create a "database" from the previously gathered information
 
 # Eric Lease Morgan <emorgan@nd.edu>

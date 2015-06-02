@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # make-index.sh - create frequency files from the contents of a directory
 
 # Eric Lease Morgan <emorgan@nd.edu>

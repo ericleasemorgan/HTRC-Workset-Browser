@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # search.sh - given a one-word query and a "database", do a search and return it in plain text
 
 # Eric Lease Morgan <emorgan@nd.edu>

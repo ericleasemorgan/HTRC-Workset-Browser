@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # themes.sh - given a set of frequency files and a lexicon; compute the "significance" of the a document
 
 # Eric Lease Morgan <emorgan@nd.edu>

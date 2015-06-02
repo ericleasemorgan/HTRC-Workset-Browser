@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # calculate-size.sh - compute the size of all the .db files in a given directory
 
 # Eric Lease Morgan <emorgan@nd.edu>

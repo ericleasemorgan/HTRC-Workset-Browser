@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # make-graphs.sh - assuming R (and all of its friends) is installed, create some charts
 
 # Eric Lease Morgan <emorgan@nd.edu>

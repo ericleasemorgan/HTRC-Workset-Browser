@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # build-corpus.sh - given an rsync shell script and a keyword, cache HathiTrust content and make it browsable
 
 # Eric Lease Morgan <emorgan@nd.edu>

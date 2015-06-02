@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # about.sh - create a set of name/value pairs describing a corpus
 
 # Eric Lease Morgan <emorgan@nd.edu>
