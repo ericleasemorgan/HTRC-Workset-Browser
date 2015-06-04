@@ -5,6 +5,7 @@
 # Eric Lease Morgan <emorgan@nd.edu>
 # May 26, 2015 - first investigations
 # May 27, 2015 - at the cabin, and got first output
+# June 4, 2015 - moved output to the graphs directory
 
 
 # configure
@@ -13,6 +14,7 @@ COLORS    = './etc/theme-colors.txt'
 NAMES     = './etc/theme-names.txt'
 IDEAS     = './etc/theme-ideas.txt'
 TEXT      = '/text/'
+GRAPHS    = '/graphs/'
 
 # require
 library( NLP )
@@ -31,19 +33,19 @@ names    <- DocumentTermMatrix( corpus, list( dictionary = as.character( read.ta
 ideas    <- DocumentTermMatrix( corpus, list( dictionary = as.character( read.table( IDEAS,  header=F )$V1 ) ) )
 
 # output the dendrograms; frequent 
-png( filename = paste( name, "/cluster-frequent.png", sep='' ) )
+png( filename = paste( name, GRAPHS, "/cluster-frequent.png", sep='' ) )
 plot( hclust( dist( frequent ) ), main='Clustering via frequent words' )
 
 # colors
-png( filename = paste( name, "/cluster-colors.png", sep='' ) )
+png( filename = paste( name, GRAPHS, "/cluster-colors.png", sep='' ) )
 plot( hclust( dist( colors ) ), main='Clustering via color words' )
 
 # names
-png( filename = paste( name, "/cluster-names.png", sep='' ) )
+png( filename = paste( name, GRAPHS, "/cluster-names.png", sep='' ) )
 plot( hclust( dist( names ) ), main='Clustering via "big" names' )
 
 # ideas
-png( filename = paste( name, "/cluster-ideas.png", sep='' ) )
+png( filename = paste( name, GRAPHS, "/cluster-ideas.png", sep='' ) )
 plot( hclust( dist( ideas ) ), main='Clustering via "great" ideas' )
 
 

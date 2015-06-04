@@ -2,7 +2,7 @@
 <head><title>austen</title></head>
 <body style='margin: 3%'>
 
-<h1><img align='right' src="./wordcloud-frequency.png" />austen</h1>
+<h1><img align='right' src="./graphs/wordcloud-frequency.png" />austen</h1>
 
 <p>This page describes a corpus named austen.</p>
 
@@ -12,13 +12,13 @@
 
 <ul>
 <li>Number of items - 6</li>
-<li>Publication date range - 1816 to 1918</li>
-<li>Sizes in pages - 348 to 1046</li>
+<li>Publication date range - 1816 to 1918 (<a href="./graphs/catalog-histogram-dates.png">histogram</a> : <a href="./graphs/catalog-boxplot-dates.png">boxplot</a>)</li>
+<li>Sizes in pages - 348 to 1046 (<a href="./graphs/catalog-histogram-pages.png">histogram</a> : <a href="./graphs/catalog-boxplot-pages.png">boxplot</a>)</li>
 <li>Total number of pages - 3166</li>
 <li>Average number of pages per item - 527</li>
 </ul>
 
-<p>For more detail, <a href='./catalog.html'>browse the catalog</a>.</p>
+<p>Possible correlations between numeric characteristics of records in the catalog can be illustrated through a <a href="./graphs/catalog-scatterplot.png">matrix of scatter plots</a>. As you would expect, there is almost always a correlation between pages and number of words. Are others exist? For more detail, <a href='./catalog.html'>browse the catalog</a>.</p>
 
 
 <h2>Notes on word usage</h2>
@@ -26,7 +26,7 @@
 <p>By counting and tabulating the words in each item of the corpus, it is possible to measure additional characteristics:</p>
 
 <ul>
-<li>Sizes of items in words - 38557 to 83439</li>
+<li>Sizes of items in words - 38557 to 83439 (<a href="./graphs/catalog-histogram-words.png">histogram</a> : <a href="./graphs/catalog-boxplot-words.png">boxplot</a>)</li>
 <li>Total number of words - 388132</li>
 <li>Average number of words per item - 64688</li>
 <li>Total number of unique words - 12448</li>
@@ -45,11 +45,13 @@
 <li style='margin-bottom: 1em'>Colors - <a href="./search.cgi?q=white">white</a> (59)&nbsp; <a href="./search.cgi?q=black">black</a> (50)&nbsp; <a href="./search.cgi?q=green">green</a> (33)&nbsp; <a href="./search.cgi?q=red">red</a> (33)&nbsp; <a href="./search.cgi?q=brown">brown</a> (29)&nbsp; <a href="./search.cgi?q=blue">blue</a> (21)&nbsp; <a href="./search.cgi?q=gray">gray</a> (13)&nbsp; <a href="./search.cgi?q=yellow">yellow</a> (13)&nbsp; <a href="./search.cgi?q=purple">purple</a> (5)&nbsp; <a href="./search.cgi?q=orange">orange</a> (5)&nbsp;  For more detail, see the list of <a href="./dictionary-colors.db">color word frequencies</a>.</li>
 </ul>
 
-<p>The frequency of the words in the corpus and how these frequencies "cluster" works together can be illustrated:</p>
+<p>The distribution of words (histograms and boxplots) and the frequency of words (wordclouds), and how these frequencies "cluster" together can be illustrated:</p>
 
 <ul>
-<li>Wordclouds - <a href="./wordcloud-frequency.png">most common words</a>; <a href="./wordcloud-names.png">"big" names</a>; <a  href="./wordcloud-ideas.png">"great" ideas</a>; <a href="./wordcloud-colors.png">colors</a></li>
-<li>Cluster dendrograms - <a href="./cluster-frequent.png">most common words</a>; <a href="./cluster-names.png">"big" names</a>; <a  href="./cluster-ideas.png">"great" ideas</a>; <a href="./cluster-colors.png">colors</a></li>
+<li>Histograms - <a href="./graphs/catalog-histogram-names.png">"big" names</a>; <a href="./graphs/catalog-histogram-ideas.png">"great" ideas</a>; <a href="./graphs/catalog-histogram-colors.png">colors</a></li>
+<li>Boxplots - <a href="./graphs/catalog-boxplot-names.png">"big" names</a>; <a href="./graphs/catalog-boxplot-ideas.png">"great" ideas</a>; <a href="./graphs/catalog-boxplot-colors.png">colors</a></li>
+<li>Wordclouds - <a href="./graphs/wordcloud-frequency.png">most common words</a>; <a href="./graphs/wordcloud-names.png">"big" names</a>; <a href="./graphs/wordcloud-ideas.png">"great" ideas</a>; <a href="./graphs/wordcloud-colors.png">colors</a></li>
+<li>Cluster dendrograms - <a href="./graphs/cluster-frequent.png">most common words</a>; <a href="./graphs/cluster-names.png">"big" names</a>; <a  href="./graphs/cluster-ideas.png">"great" ideas</a>; <a href="./graphs/cluster-colors.png">colors</a></li>
 </ul>
 
 

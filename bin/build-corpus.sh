@@ -26,6 +26,7 @@ mkdir $NAME
 mkdir $NAME/json
 mkdir $NAME/index
 mkdir $NAME/text
+mkdir $NAME/graphs
 
 # harvest the content
 chmod +x $RSYNCSCRIPT
