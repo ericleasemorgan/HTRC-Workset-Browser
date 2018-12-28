@@ -21,7 +21,7 @@ import os
 
 # sanity check
 if len( sys.argv ) != 2 :
-	print "Usage:", sys.argv[ 0 ], '<name>'
+	print( "Usage:", sys.argv[ 0 ], '<name>' )
 	quit()
 
 # get input
@@ -35,13 +35,13 @@ for filename in glob.glob( name + JSON + '*.json' ):
 		
 	# parse
 	id           = metadata[ 'id' ]
-	title        = ( metadata[ 'metadata' ]['title' ] ).encode( 'utf-8' )
+	title        = metadata[ 'metadata' ]['title' ]
 	date_created = metadata[ 'metadata' ][ 'pubDate' ]
 	page_count   = metadata[ 'features' ][ 'pageCount' ]
 	handle       = metadata[ 'metadata' ][ 'handleUrl' ]
 	language     = metadata[ 'metadata' ][ 'language' ]
 	marc         = metadata[ 'metadata' ][ 'htBibUrl' ]
-	worldcat     = WORLDCAT + metadata[ 'metadata' ][ 'oclc' ]
+	worldcat     = WORLDCAT + metadata[ 'metadata' ][ 'oclc' ][ 0 ]
 
 	# output a list of the metadata
 	print( '\t'.join( map( str, [ id, title, date_created, page_count, handle, language, marc, worldcat ] ) ) )
