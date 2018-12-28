@@ -68,7 +68,7 @@ cat $NAME/dictionary.db | ./bin/list-unique.py  > $NAME/unique.db
 ./bin/calculate-themes.py -v $NAME/dictionary.db etc/theme-ideas.txt  > $NAME/dictionary-ideas.db
 
 # create charts; R needs to be installed (oops!); commented out so people don't need R, yet
-#./bin/make-graphs.sh $NAME
+./bin/make-graphs.sh $NAME
 
 
 # state 5 - analyze corpus and create pretty about page
