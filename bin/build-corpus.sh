@@ -36,10 +36,10 @@ RSYNCSCRIPT=$( basename $RSYNCSCRIPT )
 ./$RSYNCSCRIPT
 
 # get rid of "advanced" files, uncompress everything, and rename the balance
-rm *.advanced.*
+find . -name "*.bz2" -exec mv {} . \;
+find . -name "*" -type d -exec rm -rf {} \;
 bunzip2 *.bz2
-for f in *.basic.json; do mv $f ${f//basic\.json}json ; done
-
+rm ./$RSYNCSCRIPT
 
 # stage #2 - create the index
 cd ../..

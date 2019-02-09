@@ -41,7 +41,8 @@ for filename in glob.glob( name + JSON + '*.json' ):
 	handle       = metadata[ 'metadata' ][ 'handleUrl' ]
 	language     = metadata[ 'metadata' ][ 'language' ]
 	marc         = metadata[ 'metadata' ][ 'htBibUrl' ]
-	worldcat     = WORLDCAT + metadata[ 'metadata' ][ 'oclc' ][ 0 ]
+	#worldcat     = WORLDCAT + metadata[ 'metadata' ][ 'oclc' ][ 0 ]
+	worldcat     = ' '
 
 	# output a list of the metadata
 	print( '\t'.join( map( str, [ id, title, date_created, page_count, handle, language, marc, worldcat ] ) ) )
